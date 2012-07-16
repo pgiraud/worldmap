@@ -28,14 +28,27 @@
       "Datasource": {
         "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
         "type": "shape"
-      }
+      },
+      "class": "",
+      "srs-name": "900913"
+    },
+    {
+      "geometry": "linestring",
+      "id": "10madmin0boundarylin",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "10madmin0boundarylin"
     },
     {
       "geometry": "point",
       "id": "countries_label",
       "class": "",
       "Datasource": {
-        "file": "/home/pierre/public_html/worldmap/data/countries.shp",
+        "file": "data/countries.shp",
         "id": "countries_label",
         "project": "WorldMap",
         "srs": null
@@ -43,6 +56,20 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "countries_label"
+    },
+    {
+      "geometry": "point",
+      "id": "cities",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip",
+        "id": "cities",
+        "project": "worldmap",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "cities"
     }
   ],
   "name": "World Map",
