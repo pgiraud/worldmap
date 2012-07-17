@@ -53,17 +53,33 @@
     text-dx: 4;
     text-dy: 4;
   }
-  [zoom=7] {
+  [zoom=6] {
     [SCALERANK<3],
     [SCALERANK=3] {
-      text-size: 13;
+      text-size: 11;
     }
     [SCALERANK=4],
     [SCALERANK=5] {
-      text-size: 12;
-    }
-    [SCALERANK=6] { 
       text-size: 10;
     }
+    [SCALERANK=6] { 
+      text-size: 9;
+    }
+  }
+}
+
+#10mgeographyregionse {
+  [ScaleRank<=5] {
+    text-name:'[Name]';
+    text-face-name:@sans_bold;
+    text-fill: #555;
+    text-size:9;
+    text-halo-fill:rgba(255,255,255,0.5);
+    text-halo-radius:2;
+    text-line-spacing:1;
+    text-placements: "E,NE,S,W,N,SE,NW,SW";
+    text-placement-type:simple;
+    text-dx: 4;
+    text-dy: 4;
   }
 }

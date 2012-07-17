@@ -21,6 +21,17 @@
   ],
   "Layer": [
     {
+      "geometry": "raster",
+      "id": "geotiff",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/macbookpro/Documents/mapbox/project/worldmap/layers/natural-earth-2-mercator.tif"
+      },
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "geotiff"
+    },
+    {
       "id": "countries",
       "name": "countries",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
@@ -33,6 +44,39 @@
       "srs-name": "900913"
     },
     {
+      "geometry": "polygon",
+      "id": "10murbanareas",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-urban-areas.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "10murbanareas"
+    },
+    {
+      "geometry": "polygon",
+      "id": "10mlakes",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-lakes.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "10mlakes"
+    },
+    {
+      "geometry": "linestring",
+      "id": "10mriverslakecenterl",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-rivers-lake-centerlines.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "10mriverslakecenterl"
+    },
+    {
       "geometry": "linestring",
       "id": "10madmin0boundarylin",
       "class": "",
@@ -42,6 +86,17 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "10madmin0boundarylin"
+    },
+    {
+      "geometry": "point",
+      "id": "10mgeographyregionse",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-geography-regions-elevation-points.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "10mgeographyregionse"
     },
     {
       "geometry": "point",
