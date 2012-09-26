@@ -11,7 +11,10 @@
     2
   ],
   "format": "png",
-  "interactivity": false,
+  "interactivity": {
+    "layer": "cities",
+    "fields": []
+  },
   "minzoom": 0,
   "maxzoom": 22,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
@@ -22,26 +25,24 @@
   "Layer": [
     {
       "geometry": "raster",
-      "id": "geotiff",
+      "id": "raster",
       "class": "",
       "Datasource": {
-        "file": "/Users/macbookpro/Documents/mapbox/project/worldmap/layers/natural-earth-2-mercator.tif"
+        "file": "/Users/macbookpro/Documents/mapbox_seed/map_mercator_light.tif",
+        "id": "nelcmercator",
+        "project": "worldmap2",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
       },
       "srs-name": "900913",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "name": "geotiff"
-    },
-    {
-      "id": "countries",
-      "name": "countries",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "geometry": "polygon",
-      "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
-        "type": "shape"
-      },
-      "class": "",
-      "srs-name": "900913"
+      "name": "raster",
+      "extent": [
+        -179.9999999749438,
+        -85.051,
+        179.9999999749438,
+        85.051
+      ],
+      "advanced": {}
     },
     {
       "geometry": "polygon",
@@ -56,25 +57,42 @@
     },
     {
       "geometry": "polygon",
-      "id": "10mlakes",
+      "extent": [
+        -180,
+        -85.051,
+        180,
+        85.051
+      ],
+      "id": "10mbathymetry",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-lakes.zip"
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-bathymetry.zip"
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "10mlakes"
+      "advanced": {},
+      "name": "10mbathymetry"
     },
     {
       "geometry": "linestring",
-      "id": "10mriverslakecenterl",
+      "extent": [
+        -179.99998938710374,
+        -85.051,
+        180,
+        85.051
+      ],
+      "id": "10mgraticules10",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-rivers-lake-centerlines.zip"
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-graticules-10.zip",
+        "id": "10mgraticules10",
+        "project": "worldmap2",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "10mriverslakecenterl"
+      "advanced": {},
+      "name": "10mgraticules10"
     },
     {
       "geometry": "linestring",
@@ -89,14 +107,17 @@
     },
     {
       "geometry": "point",
-      "id": "10mgeographyregionse",
+      "id": "peaks",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-geography-regions-elevation-points.zip"
+        "file": "/Users/macbookpro/Documents/mapbox/project/worldmap2/data/elevation.shp",
+        "id": "peaks",
+        "project": "worldmap2",
+        "srs": null
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "10mgeographyregionse"
+      "name": "peaks"
     },
     {
       "geometry": "point",
@@ -125,8 +146,46 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "cities"
+    },
+    {
+      "geometry": "linestring",
+      "id": "waterbodieslnlabels",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/macbookpro/Documents/mapbox/project/worldmap2/data/water_bodies_ln_labels.shp",
+        "id": "waterbodieslnlabels",
+        "project": "worldmap2",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "waterbodieslnlabels"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -180,
+        -85.051,
+        179.99999620397597,
+        85.051
+      ],
+      "id": "geographiclines",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/macbookpro/Documents/mapbox/project/worldmap2/data/geographic-lines.shp",
+        "id": "geographiclines",
+        "project": "worldmap2",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "geographiclines"
     }
   ],
+  "scale": 1,
+  "metatile": 2,
   "name": "World Map",
-  "description": ""
+  "description": "",
+  "legend": ""
 }
