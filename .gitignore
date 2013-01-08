@@ -1,0 +1,4 @@
+.DS_Store
+layers/*
+worldmap.xml
+worldmap_resized.xml

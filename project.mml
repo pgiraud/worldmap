@@ -28,7 +28,7 @@
       "id": "raster",
       "class": "",
       "Datasource": {
-        "file": "/Users/macbookpro/Documents/mapbox_seed/map_mercator_light.tif",
+        "file": "data/map_mercator_light.tif",
         "id": "nelcmercator",
         "project": "worldmap2",
         "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
@@ -56,22 +56,40 @@
       "name": "10murbanareas"
     },
     {
-      "geometry": "polygon",
+      "geometry": "linestring",
       "extent": [
-        -180,
-        -85.051,
-        180,
-        85.051
+        -164.90349121093752,
+        -52.15774505000591,
+        177.21118164062503,
+        75.79347565311913
       ],
-      "id": "10mbathymetry",
+      "id": "10mriverslakecenterl",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-bathymetry.zip"
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-rivers-lake-centerlines-scale-ranks.zip"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "10mbathymetry"
+      "name": "10mriverslakecenterl"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -165.24,
+        -50.24,
+        176.33,
+        73.33
+      ],
+      "id": "rivers",
+      "class": "",
+      "Datasource": {
+        "file": "data/rivers.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "rivers"
     },
     {
       "geometry": "linestring",
@@ -96,6 +114,24 @@
     },
     {
       "geometry": "linestring",
+      "extent": [
+        -179.99998938710374,
+        -85.051,
+        180,
+        85.051
+      ],
+      "id": "10mgraticules30",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-graticules-30.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "10mgraticules30"
+    },
+    {
+      "geometry": "linestring",
       "id": "10madmin0boundarylin",
       "class": "",
       "Datasource": {
@@ -106,32 +142,49 @@
       "name": "10madmin0boundarylin"
     },
     {
+      "geometry": "linestring",
+      "extent": [
+        -139.04719194227846,
+        -49.25074024841062,
+        178.44862226797608,
+        81.13822602001463
+      ],
+      "id": "10madmin1statesprovi",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-lines.zip",
+        "id": "10madmin1statesprovi",
+        "project": "worldmap2",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "10madmin1statesprovi"
+    },
+    {
       "geometry": "point",
       "id": "peaks",
       "class": "",
       "Datasource": {
-        "file": "/Users/macbookpro/Documents/mapbox/project/worldmap2/data/elevation.shp",
+        "file": "data/elevation.shp",
         "id": "peaks",
         "project": "worldmap2",
-        "srs": null
+        "srs": null,
+        "encoding": "LATIN1"
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "peaks"
-    },
-    {
-      "geometry": "point",
-      "id": "countries_label",
-      "class": "",
-      "Datasource": {
-        "file": "data/countries.shp",
-        "id": "countries_label",
-        "project": "WorldMap",
-        "srs": null
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "name": "countries_label"
+      "name": "peaks",
+      "extent": [
+        -178.15520178944752,
+        -85.051,
+        179.2036238941463,
+        83.32739899296284
+      ],
+      "advanced": {
+        "encoding": "LATIN1"
+      }
     },
     {
       "geometry": "point",
@@ -149,17 +202,45 @@
     },
     {
       "geometry": "linestring",
-      "id": "waterbodieslnlabels",
+      "extent": [
+        -165.24,
+        -50.24,
+        176.33,
+        73.33
+      ],
+      "id": "rivers_labels",
       "class": "",
       "Datasource": {
-        "file": "/Users/macbookpro/Documents/mapbox/project/worldmap2/data/water_bodies_ln_labels.shp",
-        "id": "waterbodieslnlabels",
-        "project": "worldmap2",
-        "srs": ""
+        "file": "data/rivers.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "waterbodieslnlabels"
+      "advanced": {},
+      "name": "rivers_labels"
+    },
+    {
+      "geometry": "linestring",
+      "id": "waterbodieslnlabels",
+      "class": "",
+      "Datasource": {
+        "file": "data/water_bodies_ln_labels.shp",
+        "id": "waterbodieslnlabels",
+        "project": "worldmap2",
+        "srs": "",
+        "encoding": "LATIN1"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "waterbodieslnlabels",
+      "extent": [
+        -112.3285622917875,
+        -78.1682957720178,
+        179.22770985879453,
+        78.45826955811819
+      ],
+      "advanced": {
+        "encoding": "LATIN1"
+      }
     },
     {
       "geometry": "linestring",
@@ -172,7 +253,7 @@
       "id": "geographiclines",
       "class": "",
       "Datasource": {
-        "file": "/Users/macbookpro/Documents/mapbox/project/worldmap2/data/geographic-lines.shp",
+        "file": "data/geographic-lines.shp",
         "id": "geographiclines",
         "project": "worldmap2",
         "srs": ""
@@ -181,6 +262,104 @@
       "srs": "",
       "advanced": {},
       "name": "geographiclines"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -179.48338369124806,
+        -66.23564884840528,
+        179.9536524299243,
+        85.051
+      ],
+      "id": "geographiclineslabel",
+      "class": "",
+      "Datasource": {
+        "file": "data/geographic-lines-labels_.shp",
+        "id": "geographiclineslabel",
+        "project": "worldmap2",
+        "srs": "",
+        "encoding": "LATIN1"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {
+        "encoding": "LATIN1"
+      },
+      "name": "geographiclineslabel"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -110.63625784458252,
+        -63.177509362820125,
+        165.79030738247945,
+        64.52833071284012
+      ],
+      "id": "waterbodiesptlabels",
+      "class": "",
+      "Datasource": {
+        "file": "data/water_bodies_pt_labels.shp",
+        "id": "waterbodiesptlabels",
+        "project": "worldmap2",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "waterbodiesptlabels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -179.99999999990007,
+        -55.91477792755927,
+        180,
+        83.63432689077344
+      ],
+      "id": "states",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-shp.zip",
+        "id": "states",
+        "project": "worldmap2",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "states"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -179.58997888396897,
+        -81.17908472282718,
+        179.38330358817024,
+        82.48332318035943
+      ],
+      "id": "cities_labels",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "cities_labels"
+    },
+    {
+      "geometry": "point",
+      "id": "countries_label",
+      "class": "",
+      "Datasource": {
+        "file": "data/countries.shp",
+        "id": "countries_label",
+        "project": "WorldMap",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "countries_label"
     }
   ],
   "scale": 1,

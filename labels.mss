@@ -11,19 +11,38 @@
 #countries_label {
   text-face-name: @futura_med;
   text-fill: #333;
-  text-size:14;
+  text-size:15;
   text-halo-fill: @countries;
-  text-halo-radius:1;
+  text-halo-radius:1.5;
   text-line-spacing:1;
   text-wrap-width:20;
   text-name: "[NAME]";
-  text-placements:"N,S,W,E,NE,SW,15,12,10,8";
+  text-placements:"N,S,W,E,NE,SW,16,13";
   text-placement-type:simple;
-    text-dx: 3;
-    text-dy: 3;
+    text-dx: 4;
+    text-dy: 4;
+  text-clip: false;
 }
 
-#cities {
+#states {
+  [NAME_0='United States of America'] {
+  text-face-name: @futura_med;
+  text-fill: #777;
+  text-size:15;
+  text-halo-fill: @countries;
+  text-halo-radius:1;
+  text-line-spacing:1;
+  text-wrap-width:30;
+  text-name: "[NAME_1]";
+  text-placements:"N,S,W,E,NE,SW,13,11";
+  text-placement-type:simple;
+    text-dx: 4;
+    text-dy: 4;
+  text-clip: false;
+    }
+}
+
+#cities_labels {
   [SCALERANK<3],
   [SCALERANK=3],
   [SCALERANK=4],
@@ -32,8 +51,8 @@
   [SCALERANK=7] {
     text-name:'[NAMEASCII]';
     text-face-name:@sans;
-    text-fill: rgba(50, 50, 50, 0.7);
-    text-halo-fill:rgba(255,255,255,0.5);
+    text-fill: rgba(50, 50, 50, 0.8);
+    text-halo-fill:rgba(255,255,255,0.7);
     text-halo-radius:1;
     text-line-spacing:1;
     text-placements: "NE,E,S,W,N,SE,NW,SW";
@@ -42,8 +61,10 @@
     text-dy: 4;
   [FEATURECLA="Admin-0 capital"] {
     text-fill: rgba(50, 50, 50, 1);
-    text-halo-fill: rgba(255,255,160,0.5);
+    text-halo-fill: rgba(255,255,160,0.7);
+    text-halo-radius: 1.5;
     }
+  text-clip: false;
   }
     [SCALERANK<3],
     [SCALERANK=3] {
@@ -66,11 +87,11 @@
     text-name:"[Name] + '\n(' + [Elevation] + ' m)'";
     text-face-name:@futura_italic;
     text-fill: white;
-    text-size:8;
-    text-halo-fill:rgba(60, 60, 60,0.5);
+    text-size:9;
+    text-halo-fill:rgba(60, 60, 60,0.7);
     text-halo-radius:1;
     text-line-spacing:1;
-    text-placements: "E,NE,S,W,N,SE,NW,SW";
+    text-placements: "W,NW,S,E,NE,N,SE,SW";
     text-placement-type:simple;
     text-dx: 4;
     text-dy: 4;
@@ -80,26 +101,53 @@
 #waterbodieslnlabels {
   text-face-name: @sans;
   text-fill: rgba(255, 255, 255, 0.7);
+  text-halo-fill: rgba(0, 130, 255, 0.3);
+  text-halo-radius:1.5;
+  text-line-spacing:1;
+  text-wrap-width:20;
+  text-name: "[name_fr]";
+  text-placement: line;
+  text-size:16;
+  text-clip: false;
+}
+#waterbodiesptlabels {
+  text-face-name: @futura_italic;
+  text-fill: rgba(255, 255, 255, 0.7);
   text-halo-fill: rgba(0, 130, 255, 0.5);
   text-halo-radius:1;
   text-line-spacing:1;
   text-wrap-width:20;
   text-name: "[name_fr]";
-  text-placement: line;
   text-avoid-edges: true;
   text-size:14;
+  [scale_rank=0] {
+    text-size: 26;
+  }
+  [scale_rank=1] {
+    text-size: 16;
+  }
+  text-clip: false;
 }
 
-#geographiclines {
-  [ScaleRank<100] {
+#geographiclineslabel {
+    text-size: 16;
   text-face-name: @sans_bold;
   text-fill: @orange;
   text-halo-fill:rgba(255,255,255,0.5);
   text-halo-radius:1;
+  text-wrap-width:60;
+  text-name: "[NAME_FR]";
+}
+
+#rivers_labels {
+  text-face-name: @sans_bold;
+  text-fill: #70b1ef;
+  text-halo-fill: rgba(255,255,255,0.5);
+  text-halo-radius:1;
   text-line-spacing:1;
   text-wrap-width:20;
-  text-name: "[Name_FR]";
+  text-name: "[NAME]";
   text-placement: line;
-  text-avoid-edges: true;
-  }
+  text-size:9;
+  text-clip: false;
 }
