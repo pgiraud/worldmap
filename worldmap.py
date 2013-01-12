@@ -80,8 +80,7 @@ projection = mapnik.Projection(srs)
 
 RASTER_GEO_SIZE = RASTER_BOUNDS[2] - RASTER_BOUNDS[0]
 TILE_GEO_SIZE = RASTER_GEO_SIZE / COLS
-#for i in range(0, COLS):
-for i in range(COLS - 1, COLS):
+for i in range(0, COLS):
 #for i in range(0, 1):
     start = datetime.datetime.now()
 
