@@ -99,7 +99,7 @@ for i in range(0, COLS):
     map.extent = bounds
     map.zoom_to_box(bounds)
 
-    image = '/Users/macbookpro/Documents/worldmap_%02d.png' % i
+    image = 'export/worldmap_%02d.png' % i
     print "Rendering image %s" % image
     mapnik.render_to_file(map, image)
     end = datetime.datetime.now()
@@ -122,5 +122,5 @@ for i in range(0, COLS):
     print "Cropping "
 
     cropped = im.crop(box)
-    image = '/Users/macbookpro/Documents/worldmap_%02d_cropped.png' % i
+    image = 'export/worldmap_%02d_cropped.png' % i
     cropped.save(image)
