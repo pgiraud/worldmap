@@ -23,3 +23,5 @@ In a terminal, change directory to the worldmap directory, and type the
 following command::
 
     python worldmap.py
+
+This will create several files in the export directory.

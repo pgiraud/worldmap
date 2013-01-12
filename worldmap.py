@@ -1,8 +1,9 @@
-#!/usr/bin/env python
+#.save(image + '.tif')!/usr/bin/env python
 
 from xml.dom import minidom
 import datetime
 import math
+import os, io
 
 from PIL import Image
 
@@ -80,15 +81,19 @@ projection = mapnik.Projection(srs)
 
 RASTER_GEO_SIZE = RASTER_BOUNDS[2] - RASTER_BOUNDS[0]
 TILE_GEO_SIZE = RASTER_GEO_SIZE / COLS
+
+# offset in pixel from the left border of the worldmap image
+offset = 0
 for i in range(0, COLS):
 #for i in range(0, 1):
     start = datetime.datetime.now()
 
-    x_min = RASTER_BOUNDS[0] + i * TILE_GEO_SIZE - TILE_GEO_SIZE * (1 - X_GUTTER)
+    x_min = RASTER_BOUNDS[0] + i * TILE_GEO_SIZE
+    x_max = x_min + TILE_GEO_SIZE
+    margin = TILE_GEO_SIZE * (1 - X_GUTTER)
 
-    x_max = x_min + TILE_GEO_SIZE + TILE_GEO_SIZE * (1 - X_GUTTER)
-
-    bounds = mapnik.Box2d(x_min, RASTER_BOUNDS[1], x_max, RASTER_BOUNDS[3])
+    bounds = mapnik.Box2d(x_min - margin, RASTER_BOUNDS[1],
+            x_max + margin, RASTER_BOUNDS[3])
     print "Map bounds : %s" % bounds
 
     ds = mapnik.Gdal(file= "layers/map_natearth_compressed_small.tif")
@@ -99,18 +104,18 @@ for i in range(0, COLS):
     map.extent = bounds
     map.zoom_to_box(bounds)
 
-    image = 'export/worldmap_%02d.png' % i
+    image = 'export/worldmap_%02d' % i
     print "Rendering image %s" % image
-    mapnik.render_to_file(map, image)
+    mapnik.render_to_file(map, image + '.png')
     end = datetime.datetime.now()
     duration = end - start
     print "rendered image to '%s' in %s seconds" % (image, duration.seconds)
 
-    im = Image.open(image)
-    if i == 0:
-        xmin = 0
-    else:
-        xmin = int(TILE_SIZE * (X_GUTTER - 1) / 2) 
+    im = Image.open(image + '.png')
+    #if i == 0:
+        #xmin = 0
+    #else:
+    xmin = int(TILE_SIZE * (X_GUTTER - 1) / 2) 
     if i == COLS - 1:
         xmax = TILE_SIZE
     else:
@@ -122,5 +127,21 @@ for i in range(0, COLS):
     print "Cropping "
 
     cropped = im.crop(box)
-    image = 'export/worldmap_%02d_cropped.png' % i
-    cropped.save(image)
+    cropped.save(image + '.tif')
+    os.remove(image + '.png');
+
+    # Create the new tfw file for writing
+    # This world file takes pixels coordinates into account
+    config = io.open(image + '.tfw', 'w')
+
+    # Read the lines from the template, substitute the values
+    for line in io.open('template.tfw', 'r'):
+        line = line.replace('X_ORIG', str(i * TILE_SIZE))
+        config.write(line)
+
+    # Close the files
+    config.close()
+
+print "Done ! Now you can launch the following command: 'cd export && gdal_merge.py -o worldmap.tif -co COMPRESS=DEFLATE -co TILED=YES worldmap_*.tif'."
+print "It may take a while."
+print "Then convert it to PDF : 'gdal_translate worldmap.tif worldmap.pdf'."
