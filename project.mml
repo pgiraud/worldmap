@@ -169,8 +169,8 @@
       "Datasource": {
         "file": "data/elevation.shp",
         "id": "peaks",
-        "project": "worldmap2",
-        "srs": null,
+        "project": "worldmap",
+        "srs": "",
         "encoding": "LATIN1"
       },
       "srs-name": "autodetect",

@@ -1,6 +1,6 @@
 
 @water:             #73b8f5;
-@orange:            #f36026;
+@orange:            #f36b35;
 @countries:         rgba(180, 220, 255,0.5);
 
 Map {
@@ -35,12 +35,14 @@ Map {
       marker-line-color:#555;
       marker-allow-overlap: true;
     }
+    /*
     [SCALERANK=7] {
       marker-width:2;
       marker-fill:#999;
       marker-line-color:#555;
       marker-allow-overlap: true;
     }
+    */
   }
 }
 
@@ -55,7 +57,13 @@ Map {
 #peaks {
   [Name!=''][ScaleRank<=7] {
     point-file: url(symbols/peak4.svg);
-    point-transform: "scale(0.03)";
+    point-transform: "scale(0.04)";
+    [Elevation>7000] {
+    point-transform: "scale(0.045)";
+      }
+    [Elevation=8848] {
+    point-transform: "scale(0.06)";
+      }
   }
 }
 
@@ -73,7 +81,7 @@ Map {
 
 #10madmin1statesprovi {
   [COUNTRYNAM='United States of America'] {
-  line-width:0.5;
+  line-width:0.7;
   line-dasharray: 3,3;
   line-color:grey;
     }
@@ -98,11 +106,13 @@ Map {
 }
 
 
-#10mgeographyregionsp {
+#regions {
+  [ScaleRank=0] {
   line-color:#594;
   line-width:0.5;
   polygon-opacity:1;
-  polygon-fill:#ae8;
+  polygon-fill:red;
+    }
 }
 
 #geograph_points {
