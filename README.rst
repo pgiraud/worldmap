@@ -25,3 +25,6 @@ following command::
     python worldmap.py
 
 This will create several files in the export directory.
+
+
+composite  -compose atop -geometry +0+19000 symbols/copyright.png export/worldmap_17.tif  export/worldmap_17.tif
