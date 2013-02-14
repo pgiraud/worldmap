@@ -53,7 +53,8 @@
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "10murbanareas"
+      "name": "10murbanareas",
+      "status": "off"
     },
     {
       "geometry": "linestring",

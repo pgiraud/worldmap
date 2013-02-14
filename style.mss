@@ -53,11 +53,10 @@ Map {
   polygon-opacity:0.2;
   polygon-fill:#ba8445;
 }
-
 #peaks {
   [Name!=''][ScaleRank<=7] {
-    point-file: url(symbols/peak4.svg);
-    point-transform: "scale(0.04)";
+    point-file: url(symbols/peak.svg);
+      point-transform: "scale(0.04)";
     [Elevation>7000] {
     point-transform: "scale(0.045)";
       }

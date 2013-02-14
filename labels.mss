@@ -86,13 +86,13 @@
     text-name:"[Name] + '\n' + [Elevation] + ' m'";
     text-face-name:@futura_italic;
     text-size: 11;
-    text-halo-fill: rgba(50, 50, 50, 1);
-    text-fill:rgba(255,255,255,1);
-    text-halo-radius:0.8;
+    text-fill: rgba(50, 50, 50, 1);
+    text-halo-fill:rgba(220,255,192,0.7);
+    text-halo-radius:1.3;
     text-placements: "E,W,NW,S,NE,N,SE,SW";
     text-placement-type:simple;
-    text-dx: 5;
-    text-dy: 4;
+    text-dx: 7;
+    text-dy: 7;
     [Elevation>7000] {
       text-size: 12;
       }

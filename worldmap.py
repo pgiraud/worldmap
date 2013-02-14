@@ -4,8 +4,12 @@ from xml.dom import minidom
 import datetime
 import math
 import os, io
+import subprocess
 
 from PIL import Image
+
+print "Transforming shapefile data"
+subprocess.call("sh transform_data.sh", shell=True)
 
 print "Parsing mapfile"
 xmldoc = minidom.parse('worldmap.xml')
@@ -13,9 +17,9 @@ xmldoc = minidom.parse('worldmap.xml')
 RATIO = 1 / 0.33
 RASTER_BOUNDS = (-17446643.326, -8880879.442, 17446466.468, 8880981.952) 
 RASTER_SIZE = (int(114981 / RATIO), int(58529 / RATIO))
-COLS = 30
+COLS = 15 
 TILE_SIZE = RASTER_SIZE[0] / COLS
-X_GUTTER = 1.6
+X_GUTTER = 1.4
 
 # font size, line width resize factor
 RESIZE_FACTOR = 7 / RATIO 
@@ -54,6 +58,12 @@ for s in xmldoc.getElementsByTagName('TextSymbolizer'):
     for i in ['size', 'halo-radius', 'line-spacing', 'dx', 'dy']:
         increase(s, i)
 
+for s in xmldoc.getElementsByTagName('Parameter'):
+    if s.attributes.has_key('name') and s.attributes['name'].value == 'file':
+        cdata = s.firstChild
+        if 'shp' in cdata.data:
+            cdata.data = '/tmp/' + os.path.basename(cdata.data)
+
 f = file("worldmap_resized.xml", "w+b")
 print "Writing resized mapfile"
 xmldoc.writexml(f)
@@ -74,6 +84,14 @@ mapnik.load_map(map, stylesheet)
 srs = "+proj=natearth +wkttext"
 map.srs = srs
 
+ds = mapnik.Gdal(file= "layers/map_natearth_compressed_small.tif")
+geotiff = map.layers[0]
+geotiff.datasource = ds
+geotiff.srs = srs
+
+for i in map.layers:
+    i.srs = srs
+
 print "Setting projection"
 projection = mapnik.Projection(srs)
 #long_lat_bounds = mapnik.Box2d(-180, -90, 180, 90)
@@ -85,7 +103,7 @@ TILE_GEO_SIZE = RASTER_GEO_SIZE / COLS
 # offset in pixel from the left border of the worldmap image
 offset = 0
 for i in range(0, COLS):
-#for i in range(0, 1):
+#for i in range(3, 5):
     start = datetime.datetime.now()
 
     x_min = RASTER_BOUNDS[0] + i * TILE_GEO_SIZE
@@ -95,11 +113,6 @@ for i in range(0, COLS):
     bounds = mapnik.Box2d(x_min - margin, RASTER_BOUNDS[1],
             x_max + margin, RASTER_BOUNDS[3])
     print "Map bounds : %s" % bounds
-
-    ds = mapnik.Gdal(file= "layers/map_natearth_compressed_small.tif")
-    geotiff = map.layers[0]
-    geotiff.datasource = ds
-    geotiff.srs = srs
 
     map.extent = bounds
     map.zoom_to_box(bounds)
@@ -145,3 +158,5 @@ for i in range(0, COLS):
 print "Done ! Now you can launch the following command: 'cd export && gdal_merge.py -o worldmap.tif -co COMPRESS=DEFLATE -co TILED=YES worldmap_*.tif'."
 print "It may take a while."
 print "Then convert it to PDF : 'gdal_translate worldmap.tif worldmap.pdf'."
+print "To split the file into small pieces to be printed on A4 sheets, use the folllowing:"
+print "gdal_retile.py -ps 2480 3508 worldmap.tif -targetDir tmp"
