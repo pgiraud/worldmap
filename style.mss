@@ -21,20 +21,21 @@ Map {
   [FEATURECLA!="Admin-0 capital"] {
     [SCALERANK<3],
     [SCALERANK=3],
-    [SCALERANK=4],
-    [SCALERANK=5] {
+    [SCALERANK=4] {
       marker-width:4;
       marker-fill:#999;
       marker-line-color:#555;
       marker-allow-overlap: true;
       marker-width: 10;
     }
+    /*
     [SCALERANK=6] {
       marker-width:3;
       marker-fill:#999;
       marker-line-color:#555;
       marker-allow-overlap: true;
     }
+    */
     /*
     [SCALERANK=7] {
       marker-width:2;
@@ -73,8 +74,8 @@ Map {
 }
 
 #10madmin0boundarylin::glow {
-  line-width:1;
-  line-dasharray: 4,2;
+  line-width:1.5;
+  line-dasharray: 3,4;
   line-color:grey;
 }
 
@@ -99,37 +100,7 @@ Map {
 
 #geographiclines {
     [FeatureCla!='Date line'] {
-    line-width: 0.5;
+    line-width: 1;
     line-color: @orange;
     }
-}
-
-
-#regions {
-  [ScaleRank=0] {
-  line-color:#594;
-  line-width:0.5;
-  polygon-opacity:1;
-  polygon-fill:red;
-    }
-}
-
-#geograph_points {
-  marker-width:6;
-  marker-fill:#f45;
-  marker-line-color:#813;
-  marker-allow-overlap:true;
-}
-
-#10mland {
-  polygon-opacity:1;
-  polygon-fill:#ae8;
-  polygon-gamma: 0.2;
-  polygon-gamma-method: threshold;
-}
-
-#10mriverslakecenterl {
-  line-width:0.8;
-  line-opacity: 0.7;
-  line-color:#73b5e5;
 }

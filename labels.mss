@@ -9,20 +9,33 @@
 
 /* ---- Countries ---- */
 #countries_label {
-  text-face-name: @futura_med;
-  text-fill: #333;
-  text-size:18;
-  text-halo-fill: @countries;
-  text-halo-radius:2;
-  text-line-spacing:1;
-  text-wrap-width:20;
-  text-name: "[NAME]";
-  text-placements:"N,S,W,E,NE,SW,16,13";
-  text-placement-type:simple;
+  [ID!=40]
+  [ID!=187]
+  [ID!=188]
+  [ID!=189]
+  [ID!=193]
+  [ID!=195]
+  [ID!=198]
+  [ID!=213]
+  [ID!=215] 
+  [ID!=217]
+  [ID!=230] {
+    text-face-name: @futura_med;
+    text-fill: #333;
+    text-size:20;
+    text-halo-fill: @countries;
+    text-halo-radius:2;
+    text-line-spacing:1;
+    text-wrap-width:100;
+    text-name: "[NAME]";
+    text-placements:"N,S,W,E,NE,SW";
+    text-placement-type:simple;
     text-dx: 4;
     text-dy: 4;
-  text-clip: false;
+    text-clip: false;
+  }
 }
+
 
 #states {
   [NAME_0='United States of America'] {
@@ -45,11 +58,10 @@
 #cities_labels {
   [SCALERANK<3],
   [SCALERANK=3],
-  [SCALERANK=4],
-  [SCALERANK=5],
-  [SCALERANK=6] {
+  [SCALERANK=4] {
     text-name:'[NAMEASCII]';
     text-face-name:@sans;
+    text-fill: #535353;
     text-fill: rgba(50, 50, 50, 1);
     text-halo-fill:rgba(255,255,255,0.7);
     text-halo-radius:1.3;
@@ -69,15 +81,6 @@
     [SCALERANK<3],
     [SCALERANK=3] {
       text-size: 12;
-    }
-    [SCALERANK=4],
-    [SCALERANK=5] {
-    text-fill: #535353;
-      text-size: 11;
-    }
-    [SCALERANK=6] { 
-    text-fill: #535353;
-      text-size: 10;
     }
 }
 
@@ -136,7 +139,7 @@
 }
 
 #geographiclineslabel {
-    text-size: 16;
+    text-size: 20;
   text-face-name: @sans_bold;
   text-fill: @orange;
   text-halo-fill:rgba(255,255,255,0.5);

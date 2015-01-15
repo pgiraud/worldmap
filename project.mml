@@ -46,51 +46,25 @@
     },
     {
       "geometry": "polygon",
-      "id": "10murbanareas",
+      "extent": [
+        -180,
+        -85.051,
+        180,
+        85.051
+      ],
+      "id": "10mbathymetry",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-urban-areas.zip"
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-bathymetry.zip",
+        "id": "10mbathymetry",
+        "project": "worldmap",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "10murbanareas",
+      "advanced": {},
+      "name": "10mbathymetry",
       "status": "off"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -164.90349121093752,
-        -52.15774505000591,
-        177.21118164062503,
-        75.79347565311913
-      ],
-      "id": "10mriverslakecenterl",
-      "class": "",
-      "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-rivers-lake-centerlines-scale-ranks.zip"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "10mriverslakecenterl"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -165.24,
-        -50.24,
-        176.33,
-        73.33
-      ],
-      "id": "rivers",
-      "class": "",
-      "Datasource": {
-        "file": "data/rivers.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "rivers"
     },
     {
       "geometry": "linestring",
@@ -141,27 +115,6 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "10madmin0boundarylin"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -139.04719194227846,
-        -49.25074024841062,
-        178.44862226797608,
-        81.13822602001463
-      ],
-      "id": "10madmin1statesprovi",
-      "class": "",
-      "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-lines.zip",
-        "id": "10madmin1statesprovi",
-        "project": "worldmap2",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "10madmin1statesprovi"
     },
     {
       "geometry": "point",
@@ -355,8 +308,8 @@
       "Datasource": {
         "file": "data/countries.shp",
         "id": "countries_label",
-        "project": "WorldMap",
-        "srs": null
+        "project": "worldmap",
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
