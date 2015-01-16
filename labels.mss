@@ -56,32 +56,24 @@
 }
 
 #cities_labels {
-  [SCALERANK<3],
-  [SCALERANK=3],
-  [SCALERANK=4] {
+    [FEATURECLA="Admin-0 capital"] {
     text-name:'[NAMEASCII]';
     text-face-name:@sans;
     text-fill: #535353;
     text-fill: rgba(50, 50, 50, 1);
     text-halo-fill:rgba(255,255,255,0.7);
     text-halo-radius:1.3;
-    text-line-spacing:1;
-    text-placements: "NE,E,S,W,N,SE,NW,SW";
     text-placement-type:simple;
+    text-placements: "NE,E,W,NW,S,N,SE,SW";
+    text-line-spacing:1;
     text-dx: 4;
     text-dy: 4;
-  [FEATURECLA="Admin-0 capital"] {
-    text-fill: rgba(50, 50, 50, 1);
-    text-halo-fill: rgba(255,255,160,0.7);
-    text-halo-radius: 1.6;
+      text-fill: rgba(50, 50, 50, 1);
+      text-halo-fill: rgba(255,255,160,0.7);
+      text-halo-radius: 1.6;
       text-size: 13;
-    }
-  text-clip: false;
+    text-clip: false;
   }
-    [SCALERANK<3],
-    [SCALERANK=3] {
-      text-size: 12;
-    }
 }
 
 #peaks {

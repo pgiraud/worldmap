@@ -18,6 +18,8 @@ Map {
       point-transform: "scale(0.03)";
       point-allow-overlap: true;
     }
+  
+    /*
   [FEATURECLA!="Admin-0 capital"] {
     [SCALERANK<3],
     [SCALERANK=3],
@@ -28,7 +30,6 @@ Map {
       marker-allow-overlap: true;
       marker-width: 10;
     }
-    /*
     [SCALERANK=6] {
       marker-width:3;
       marker-fill:#999;
@@ -43,8 +44,8 @@ Map {
       marker-line-color:#555;
       marker-allow-overlap: true;
     }
-    */
-  }
+    
+  }*/
 }
 
 #10murbanareas {

@@ -45,28 +45,6 @@
       "advanced": {}
     },
     {
-      "geometry": "polygon",
-      "extent": [
-        -180,
-        -85.051,
-        180,
-        85.051
-      ],
-      "id": "10mbathymetry",
-      "class": "",
-      "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-bathymetry.zip",
-        "id": "10mbathymetry",
-        "project": "worldmap",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "10mbathymetry",
-      "status": "off"
-    },
-    {
       "geometry": "linestring",
       "extent": [
         -179.99998938710374,
@@ -118,37 +96,13 @@
     },
     {
       "geometry": "point",
-      "id": "peaks",
-      "class": "",
-      "Datasource": {
-        "file": "data/elevation.shp",
-        "id": "peaks",
-        "project": "worldmap",
-        "srs": "",
-        "encoding": "LATIN1"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "name": "peaks",
-      "extent": [
-        -178.15520178944752,
-        -85.051,
-        179.2036238941463,
-        83.32739899296284
-      ],
-      "advanced": {
-        "encoding": "LATIN1"
-      }
-    },
-    {
-      "geometry": "point",
       "id": "cities",
       "class": "",
       "Datasource": {
         "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip",
         "id": "cities",
         "project": "worldmap",
-        "srs": null
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
@@ -281,25 +235,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "states"
-    },
-    {
-      "geometry": "point",
-      "extent": [
-        -179.58997888396897,
-        -81.17908472282718,
-        179.38330358817024,
-        82.48332318035943
-      ],
-      "id": "cities_labels",
-      "class": "",
-      "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "cities_labels"
+      "name": "states",
+      "status": "off"
     },
     {
       "geometry": "point",
@@ -314,6 +251,51 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "countries_label"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -179.58997888396897,
+        -81.17908472282718,
+        179.38330358817024,
+        82.48332318035943
+      ],
+      "id": "cities_labels",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip",
+        "id": "cities_labels",
+        "project": "worldmap",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "cities_labels"
+    },
+    {
+      "geometry": "point",
+      "id": "peaks",
+      "class": "",
+      "Datasource": {
+        "file": "data/elevation.shp",
+        "id": "peaks",
+        "project": "worldmap",
+        "srs": "",
+        "encoding": "LATIN1"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "peaks",
+      "extent": [
+        -178.15520178944752,
+        -85.051,
+        179.2036238941463,
+        83.32739899296284
+      ],
+      "advanced": {
+        "encoding": "LATIN1"
+      }
     }
   ],
   "scale": 1,
