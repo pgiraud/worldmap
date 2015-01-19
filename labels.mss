@@ -7,6 +7,9 @@
 @sans_bold_italic:  "Open Sans Bold Italic","DejaVu Sans Bold Italic","unifont Medium";
 @sans_italic:  "Open Sans Italic","DejaVu Sans Italic","unifont Medium";
 
+@dejavu: "DejaVu Sans Book";
+@georgia: "Georgia Regular", "Georgia Normal";
+
 /* ---- Countries ---- */
 #countries_label {
   [ID!=40]
@@ -15,24 +18,56 @@
   [ID!=189]
   [ID!=193]
   [ID!=195]
-  [ID!=198]
   [ID!=213]
   [ID!=215] 
   [ID!=217]
   [ID!=230] {
-    text-face-name: @futura_med;
+  //marker-width: 6;
+  //marker-fill: red;
+  //marker-allow-overlap: true;
+    text-face-name: @dejavu;
     text-fill: #333;
-    text-size:20;
-    text-halo-fill: @countries;
+    text-size:18;
+    text-halo-fill: white;
     text-halo-radius:2;
     text-line-spacing:1;
-    text-wrap-width:100;
+    text-wrap-width:120;
     text-name: "[NAME]";
-    text-placements:"N,S,W,E,NE,SW";
     text-placement-type:simple;
     text-dx: 4;
     text-dy: 4;
     text-clip: false;
+    [PLACEMENT='N'] {
+      text-placements:"N";
+    }
+    [PLACEMENT='NE'] {
+      text-placements:"NE";
+    }
+    [PLACEMENT='E'] {
+      text-placements:"E";
+    }
+    [PLACEMENT='SE'] {
+      text-placements:"SE";
+    }
+    [PLACEMENT='S'] {
+      text-placements:"S";
+    }
+    [PLACEMENT='SW'] {
+      text-placements:"SW";
+    }
+    [PLACEMENT='W'] {
+      text-placements:"W";
+    }
+    [PLACEMENT='NW'] {
+      text-placements:"NW";
+    }
+    [PLACEMENT=''] {
+      text-face-name: @dejavu;
+      text-placement-type: simple;
+      text-horizontal-alignment: middle;
+      text-vertical-alignment: middle;
+      text-placements:"N, E, W, S, NW";
+    }
   }
 }
 
@@ -64,12 +99,12 @@
     text-halo-fill:rgba(255,255,255,0.7);
     text-halo-radius:1.3;
     text-placement-type:simple;
-    text-placements: "NE,E,W,NW,S,N,SE,SW";
+    text-placements: "NE,NW,SE,SW";
     text-line-spacing:1;
     text-dx: 4;
     text-dy: 4;
       text-fill: rgba(50, 50, 50, 1);
-      text-halo-fill: rgba(255,255,160,0.7);
+      text-halo-fill: #ffffa1;
       text-halo-radius: 1.6;
       text-size: 13;
     text-clip: false;
@@ -140,7 +175,7 @@
   text-name: "[NAME_FR]";
 }
 
-#rivers_labels {
+#rivers_label {
   text-face-name: @sans_bold;
   text-fill: #70b1ef;
   text-halo-fill: rgba(255,255,255,0.5);

@@ -2,6 +2,8 @@
 @water:             #73b8f5;
 @orange:            #f36b35;
 @countries:         rgba(180, 220, 255,0.5);
+//@urban:             #ba8445;
+@urban:             #555;
 
 Map {
   background-color: white;
@@ -49,11 +51,11 @@ Map {
 }
 
 #10murbanareas {
-  line-color:#ba8445;
-  line-width:0.5;
-  line-opacity: 0.4;
   polygon-opacity:0.2;
-  polygon-fill:#ba8445;
+  polygon-fill:@urban;
+  line-width: 0.3;
+  line-opacity: 0.5;
+  line-color: @urban;
 }
 #peaks {
   [Name!=''][ScaleRank<=7] {
@@ -76,7 +78,7 @@ Map {
 
 #10madmin0boundarylin::glow {
   line-width:1.5;
-  line-dasharray: 3,4;
+//  line-dasharray: 3,4;
   line-color:grey;
 }
 
@@ -104,4 +106,11 @@ Map {
     line-width: 1;
     line-color: @orange;
     }
+}
+
+
+#countrieslabelleader {
+    line-width:1;
+  line-dasharray: 3,4;
+  line-color: grey;
 }

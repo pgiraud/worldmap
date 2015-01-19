@@ -12,17 +12,18 @@ print "Transforming shapefile data"
 subprocess.call("sh transform_data.sh", shell=True)
 
 print "Parsing mapfile"
-xmldoc = minidom.parse('worldmap.xml')
+worldmap_path = '/Users/pierregiraud/Downloads/worldmap.xml'
+xmldoc = minidom.parse(worldmap_path)
 
 RATIO = 1 / 0.33
-RASTER_BOUNDS = (-17446643.326, -8880879.442, 17446466.468, 8880981.952) 
+RASTER_BOUNDS = (-17446643.326, -8880879.442, 17446466.468, 8880981.952)
 RASTER_SIZE = (int(114981 / RATIO), int(58529 / RATIO))
-COLS = 15 
+COLS = 3
 TILE_SIZE = RASTER_SIZE[0] / COLS
-X_GUTTER = 1.4
+X_GUTTER = 1.05
 
 # font size, line width resize factor
-RESIZE_FACTOR = 7 / RATIO 
+RESIZE_FACTOR = 9 / RATIO
 
 def increase(s, attr):
 
@@ -68,6 +69,7 @@ f = file("worldmap_resized.xml", "w+b")
 print "Writing resized mapfile"
 xmldoc.writexml(f)
 f.close()
+os.remove(worldmap_path)
 
 import mapnik
 from mapnik import LineSymbolizer, PolygonSymbolizer
@@ -128,7 +130,7 @@ for i in range(0, COLS):
     #if i == 0:
         #xmin = 0
     #else:
-    xmin = int(TILE_SIZE * (X_GUTTER - 1) / 2) 
+    xmin = int(TILE_SIZE * (X_GUTTER - 1) / 2)
     if i == COLS - 1:
         xmax = TILE_SIZE
     else:
@@ -141,7 +143,7 @@ for i in range(0, COLS):
 
     cropped = im.crop(box)
     cropped.save(image + '.tif')
-    os.remove(image + '.png');
+    #os.remove(image + '.png');
 
     # Create the new tfw file for writing
     # This world file takes pixels coordinates into account

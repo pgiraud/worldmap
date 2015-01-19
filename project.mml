@@ -45,6 +45,25 @@
       "advanced": {}
     },
     {
+      "geometry": "polygon",
+      "extent": [
+        -157.98071326396882,
+        -51.05295582458971,
+        178.03340213451082,
+        69.76979848904469
+      ],
+      "id": "10murbanareas",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-urban-areas.zip"
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "10murbanareas"
+    },
+    {
       "geometry": "linestring",
       "extent": [
         -179.99998938710374,
@@ -96,6 +115,20 @@
     },
     {
       "geometry": "point",
+      "id": "countries_label",
+      "class": "",
+      "Datasource": {
+        "file": "data/countries.shp",
+        "id": "countries_label",
+        "project": "worldmap",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "countries_label"
+    },
+    {
+      "geometry": "point",
       "id": "cities",
       "class": "",
       "Datasource": {
@@ -107,24 +140,6 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "cities"
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -165.24,
-        -50.24,
-        176.33,
-        73.33
-      ],
-      "id": "rivers_labels",
-      "class": "",
-      "Datasource": {
-        "file": "data/rivers.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "rivers_labels"
     },
     {
       "geometry": "linestring",
@@ -170,6 +185,28 @@
       "srs": "",
       "advanced": {},
       "name": "geographiclines"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -81.90028659498171,
+        9.66020702194223,
+        -57.06020780634253,
+        20.27414363349009
+      ],
+      "id": "countrieslabelleader",
+      "class": "",
+      "Datasource": {
+        "file": "data/countries_label_leader_lines.shp",
+        "id": "countrieslabelleader",
+        "project": "worldmap",
+        "srs": ""
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "countrieslabelleader"
     },
     {
       "geometry": "point",
@@ -240,20 +277,6 @@
     },
     {
       "geometry": "point",
-      "id": "countries_label",
-      "class": "",
-      "Datasource": {
-        "file": "data/countries.shp",
-        "id": "countries_label",
-        "project": "worldmap",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "name": "countries_label"
-    },
-    {
-      "geometry": "point",
       "extent": [
         -179.58997888396897,
         -81.17908472282718,
@@ -288,14 +311,34 @@
       "srs": "",
       "name": "peaks",
       "extent": [
-        -178.15520178944752,
+        -178.15520178944755,
         -85.051,
         179.2036238941463,
-        83.32739899296284
+        83.32739899296286
       ],
       "advanced": {
         "encoding": "LATIN1"
-      }
+      },
+      "layer": null
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -165.24,
+        -50.24,
+        176.33,
+        73.33
+      ],
+      "id": "rivers_label",
+      "class": "",
+      "Datasource": {
+        "file": "data/rivers.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "rivers_label",
+      "layer": null
     }
   ],
   "scale": 1,
