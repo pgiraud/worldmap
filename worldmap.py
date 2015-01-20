@@ -1,9 +1,10 @@
-#.save(image + '.tif')!/usr/bin/env python
+#! /usr/bin/env python
 
 from xml.dom import minidom
 import datetime
 import math
-import os, io
+import os
+import io
 import subprocess
 
 from PIL import Image
@@ -15,19 +16,20 @@ print "Parsing mapfile"
 worldmap_path = '/Users/pierregiraud/Downloads/worldmap.xml'
 xmldoc = minidom.parse(worldmap_path)
 
-RATIO = 1 / 0.33
+RATIO = 1 / 0.22
 RASTER_BOUNDS = (-17446643.326, -8880879.442, 17446466.468, 8880981.952)
 RASTER_SIZE = (int(114981 / RATIO), int(58529 / RATIO))
-COLS = 3
+COLS = 1
 TILE_SIZE = RASTER_SIZE[0] / COLS
 X_GUTTER = 1.05
 
 # font size, line width resize factor
 RESIZE_FACTOR = 9 / RATIO
 
+
 def increase(s, attr):
 
-    if s.attributes.has_key(attr):
+    if attr in s.attributes:
         value = s.attributes[attr].value
         if attr == 'transform':
             prefix = 'scale('
@@ -60,7 +62,7 @@ for s in xmldoc.getElementsByTagName('TextSymbolizer'):
         increase(s, i)
 
 for s in xmldoc.getElementsByTagName('Parameter'):
-    if s.attributes.has_key('name') and s.attributes['name'].value == 'file':
+    if 'name' in s.attributes and s.attributes['name'].value == 'file':
         cdata = s.firstChild
         if 'shp' in cdata.data:
             cdata.data = '/tmp/' + os.path.basename(cdata.data)
@@ -72,21 +74,19 @@ f.close()
 os.remove(worldmap_path)
 
 import mapnik
-from mapnik import LineSymbolizer, PolygonSymbolizer
 
 map = mapnik.Map(int(math.ceil(TILE_SIZE * X_GUTTER)),
-        RASTER_SIZE[1])
+                 RASTER_SIZE[1])
 print "Map size : %s x %s" % (map.width, map.height)
 
 stylesheet = 'worldmap_resized.xml'
 print "Loading map"
 mapnik.load_map(map, stylesheet)
 
-#srs = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
 srs = "+proj=natearth +wkttext"
 map.srs = srs
 
-ds = mapnik.Gdal(file= "layers/map_natearth_compressed_small.tif")
+ds = mapnik.Gdal(file="layers/map_natearth_compressed_small.tif")
 geotiff = map.layers[0]
 geotiff.datasource = ds
 geotiff.srs = srs
@@ -96,8 +96,6 @@ for i in map.layers:
 
 print "Setting projection"
 projection = mapnik.Projection(srs)
-#long_lat_bounds = mapnik.Box2d(-180, -90, 180, 90)
-#robin_bounds = robin.forward(long_lat_bounds)
 
 RASTER_GEO_SIZE = RASTER_BOUNDS[2] - RASTER_BOUNDS[0]
 TILE_GEO_SIZE = RASTER_GEO_SIZE / COLS
@@ -105,7 +103,6 @@ TILE_GEO_SIZE = RASTER_GEO_SIZE / COLS
 # offset in pixel from the left border of the worldmap image
 offset = 0
 for i in range(0, COLS):
-#for i in range(3, 5):
     start = datetime.datetime.now()
 
     x_min = RASTER_BOUNDS[0] + i * TILE_GEO_SIZE
@@ -113,7 +110,7 @@ for i in range(0, COLS):
     margin = TILE_GEO_SIZE * (1 - X_GUTTER)
 
     bounds = mapnik.Box2d(x_min - margin, RASTER_BOUNDS[1],
-            x_max + margin, RASTER_BOUNDS[3])
+                          x_max + margin, RASTER_BOUNDS[3])
     print "Map bounds : %s" % bounds
 
     map.extent = bounds
@@ -127,9 +124,6 @@ for i in range(0, COLS):
     print "rendered image to '%s' in %s seconds" % (image, duration.seconds)
 
     im = Image.open(image + '.png')
-    #if i == 0:
-        #xmin = 0
-    #else:
     xmin = int(TILE_SIZE * (X_GUTTER - 1) / 2)
     if i == COLS - 1:
         xmax = TILE_SIZE
@@ -141,9 +135,9 @@ for i in range(0, COLS):
            int(RASTER_SIZE[1]))
     print "Cropping "
 
-    cropped = im.crop(box)
-    cropped.save(image + '.tif')
-    #os.remove(image + '.png');
+    # cropped = im.crop(box)
+    # cropped.save(image + '.tif')
+    # os.remove(image + '.png');
 
     # Create the new tfw file for writing
     # This world file takes pixels coordinates into account
