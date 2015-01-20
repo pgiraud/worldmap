@@ -21,7 +21,7 @@ RASTER_BOUNDS = (-17446643.326, -8880879.442, 17446466.468, 8880981.952)
 RASTER_SIZE = (int(114981 / RATIO), int(58529 / RATIO))
 COLS = 1
 TILE_SIZE = RASTER_SIZE[0] / COLS
-X_GUTTER = 1.05
+X_GUTTER = 1.00
 
 # font size, line width resize factor
 RESIZE_FACTOR = 9 / RATIO
@@ -29,7 +29,7 @@ RESIZE_FACTOR = 9 / RATIO
 
 def increase(s, attr):
 
-    if attr in s.attributes:
+    if s.attributes.has_key(attr):
         value = s.attributes[attr].value
         if attr == 'transform':
             prefix = 'scale('
@@ -62,7 +62,7 @@ for s in xmldoc.getElementsByTagName('TextSymbolizer'):
         increase(s, i)
 
 for s in xmldoc.getElementsByTagName('Parameter'):
-    if 'name' in s.attributes and s.attributes['name'].value == 'file':
+    if s.attributes.has_key('name') and s.attributes['name'].value == 'file':
         cdata = s.firstChild
         if 'shp' in cdata.data:
             cdata.data = '/tmp/' + os.path.basename(cdata.data)
@@ -118,7 +118,7 @@ for i in range(0, COLS):
 
     image = 'export/worldmap_%02d' % i
     print "Rendering image %s" % image
-    mapnik.render_to_file(map, image + '.png')
+    mapnik.render_to_file(map, image + '.tif')
     end = datetime.datetime.now()
     duration = end - start
     print "rendered image to '%s' in %s seconds" % (image, duration.seconds)
@@ -133,8 +133,8 @@ for i in range(0, COLS):
            0,
            xmax,
            int(RASTER_SIZE[1]))
-    print "Cropping "
 
+    print "Cropping "
     # cropped = im.crop(box)
     # cropped.save(image + '.tif')
     # os.remove(image + '.png');
