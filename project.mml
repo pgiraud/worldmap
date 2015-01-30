@@ -245,13 +245,17 @@
       "Datasource": {
         "file": "data/water_bodies_pt_labels.shp",
         "id": "waterbodiesptlabels",
-        "project": "worldmap2",
-        "srs": ""
+        "project": "worldmap",
+        "srs": "",
+        "encoding": "LATIN-1"
       },
       "srs-name": "autodetect",
       "srs": "",
-      "advanced": {},
-      "name": "waterbodiesptlabels"
+      "advanced": {
+        "encoding": "LATIN-1"
+      },
+      "name": "waterbodiesptlabels",
+      "layer": null
     },
     {
       "geometry": "polygon",
@@ -301,24 +305,21 @@
       "id": "peaks",
       "class": "",
       "Datasource": {
-        "file": "data/elevation.shp",
+        "file": "data/ne_50m_geography_regions_elevation_points.shp",
         "id": "peaks",
         "project": "worldmap",
-        "srs": "",
-        "encoding": "LATIN1"
+        "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
       "name": "peaks",
       "extent": [
-        -178.15520178944755,
+        -167.55467464780637,
         -85.051,
-        179.2036238941463,
-        83.32739899296286
+        160.64393704949978,
+        69.28107036816243
       ],
-      "advanced": {
-        "encoding": "LATIN1"
-      },
+      "advanced": {},
       "layer": null
     },
     {

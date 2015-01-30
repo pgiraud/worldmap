@@ -58,13 +58,13 @@ Map {
   line-color: @urban;
 }
 #peaks {
-  [Name!=''][ScaleRank<=7] {
+  [name!=''][scalerank<=7] {
     point-file: url(symbols/peak.svg);
       point-transform: "scale(0.04)";
-    [Elevation>7000] {
+    [elevation>7000] {
     point-transform: "scale(0.045)";
       }
-    [Elevation=8848] {
+    [elevation=8848] {
     point-transform: "scale(0.06)";
       }
   }
@@ -109,8 +109,13 @@ Map {
 }
 
 
+#countrieslabelleader::glow {
+  line-color: white;
+  line-opacity: 0.2;
+  line-width: 3;
+}
+
 #countrieslabelleader {
-    line-width:1;
-  line-dasharray: 3,4;
-  line-color: grey;
+  line-dasharray: 5, 5;
+  line-width: 0.6;
 }

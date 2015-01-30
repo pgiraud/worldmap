@@ -2,7 +2,6 @@
 @futura_italic: "Futura Medium Italic","Function Pro Medium Italic","Ubuntu Italic","Trebuchet MS Italic","DejaVu Sans Oblique";
 @futura_bold: "Futura Bold","Function Pro Bold","Ubuntu Bold","Trebuchet MS Bold","DejaVu Sans Bold";
 
-@sans:"Droid Sans Book","Arial Regular","DejaVu Sans Book";
 @sans_bold:"Droid Sans Bold","Arial Bold","DejaVu Sans Bold";
 @sans_bold_italic:  "Open Sans Bold Italic","DejaVu Sans Bold Italic","unifont Medium";
 @sans_italic:  "Open Sans Italic","DejaVu Sans Italic","unifont Medium";
@@ -29,14 +28,13 @@
     text-fill: #333;
     text-size:18;
     text-halo-fill: white;
-    text-halo-radius:2;
+    text-halo-radius: 2;
     text-line-spacing:1;
     text-wrap-width:120;
     text-name: "[NAME]";
     text-placement-type:simple;
-    text-dx: 4;
-    text-dy: 4;
     text-clip: false;
+    
     [PLACEMENT='N'] {
       text-placements:"N";
     }
@@ -61,6 +59,10 @@
     [PLACEMENT='NW'] {
       text-placements:"NW";
     }
+    [PLACEMENT!=''] {
+      text-dx: 4;
+      text-dy: 4;
+      }
     [PLACEMENT=''] {
       text-face-name: @dejavu;
       text-placement-type: simple;
@@ -93,7 +95,7 @@
 #cities_labels {
     [FEATURECLA="Admin-0 capital"] {
     text-name:'[NAMEASCII]';
-    text-face-name:@sans;
+    text-face-name:@futura_med;
     text-fill: #535353;
     text-fill: rgba(50, 50, 50, 1);
     text-halo-fill:rgba(255,255,255,0.7);
@@ -112,8 +114,8 @@
 }
 
 #peaks {
-  [Name!=''][ScaleRank<=7] {
-    text-name:"[Name] + '\n' + [Elevation] + ' m'";
+  [name!=''][scalerank<=7] {
+    text-name:"[name] + '\n' + [elevation] + ' m'";
     text-face-name:@futura_italic;
     text-size: 11;
     text-fill: rgba(50, 50, 50, 1);
@@ -123,10 +125,10 @@
     text-placement-type:simple;
     text-dx: 7;
     text-dy: 7;
-    [Elevation>7000] {
+    [elevation>7000] {
       text-size: 12;
       }
-    [Elevation=8848] {
+    [elevation=8848] {
       text-size: 14;
     text-dx: 6;
     text-dy: 6;
@@ -135,7 +137,7 @@
 }
 
 #waterbodieslnlabels {
-  text-face-name: @sans;
+  text-face-name: @futura_med;
   text-fill: rgba(255, 255, 255, 0.7);
   text-halo-fill: rgba(0, 130, 255, 0.3);
   text-halo-radius:1.5;
