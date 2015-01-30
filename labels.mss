@@ -20,11 +20,10 @@
   //marker-allow-overlap: true;
     text-face-name: @futura_med;
     text-fill: #333;
-    text-size:18;
+    text-size:16;
     text-halo-fill: white;
     text-halo-radius: 2;
     text-line-spacing:1;
-    text-wrap-width:120;
     text-name: "[NAME]";
     text-placement-type:simple;
     text-clip: false;
@@ -58,6 +57,8 @@
       text-dy: 4;
       }
     [PLACEMENT=''] {
+      text-size: 18;
+      text-wrap-width:180;
       text-placement-type: simple;
       text-horizontal-alignment: middle;
       text-vertical-alignment: middle;
@@ -166,7 +167,7 @@
   text-fill: @orange;
   text-halo-fill:rgba(255,255,255,0.5);
   text-halo-radius:1;
-  text-wrap-width:60;
+  //text-wrap-width:140;
   text-name: "[NAME_FR]";
 }
 
@@ -176,7 +177,7 @@
   text-halo-fill: rgba(255,255,255,0.5);
   text-halo-radius:1;
   text-line-spacing:1;
-  text-wrap-width:20;
+  text-wrap-width:140;
   text-name: "[NAME]";
   text-placement: line;
   text-size:11;

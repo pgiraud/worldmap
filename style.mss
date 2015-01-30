@@ -90,4 +90,5 @@ Map {
 #countrieslabelleader {
   line-dasharray: 5, 5;
   line-width: 0.6;
+  line-color: #555;
 }
