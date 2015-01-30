@@ -47,15 +47,15 @@
     {
       "geometry": "polygon",
       "extent": [
-        -157.98071326396882,
-        -51.05295582458971,
-        178.03340213451082,
-        69.76979848904469
+        -157.99118261729797,
+        -51.05303741160215,
+        178.0338339830011,
+        69.76985509228818
       ],
       "id": "10murbanareas",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-urban-areas.zip"
+        "file": "data/ne_10m_urban_areas.shp"
       },
       "layer": null,
       "srs-name": "autodetect",
@@ -66,7 +66,7 @@
     {
       "geometry": "linestring",
       "extent": [
-        -179.99998938710374,
+        -179.9999893871037,
         -85.051,
         180,
         85.051
@@ -74,7 +74,7 @@
       "id": "10mgraticules10",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-graticules-10.zip",
+        "file": "data/ne_10m_graticules_10.shp",
         "id": "10mgraticules10",
         "project": "worldmap2",
         "srs": ""
@@ -82,12 +82,13 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "10mgraticules10"
+      "name": "10mgraticules10",
+      "layer": null
     },
     {
       "geometry": "linestring",
       "extent": [
-        -179.99998938710374,
+        -179.9999893871037,
         -85.051,
         180,
         85.051
@@ -95,23 +96,32 @@
       "id": "10mgraticules30",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/physical/10m-graticules-30.zip"
+        "file": "data/ne_10m_graticules_30.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "10mgraticules30"
+      "name": "10mgraticules30",
+      "layer": null
     },
     {
       "geometry": "linestring",
       "id": "10madmin0boundarylin",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip"
+        "file": "data/ne_10m_admin_0_boundary_lines_land.shp"
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "10madmin0boundarylin"
+      "name": "10madmin0boundarylin",
+      "extent": [
+        -141.00554863899987,
+        -55.120923766999944,
+        140.97762699400005,
+        70.07531036400012
+      ],
+      "layer": null,
+      "advanced": {}
     },
     {
       "geometry": "point",
@@ -132,14 +142,22 @@
       "id": "cities",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip",
+        "file": "data/ne_10m_populated_places_simple.shp",
         "id": "cities",
         "project": "worldmap",
         "srs": ""
       },
       "srs-name": "autodetect",
       "srs": "",
-      "name": "cities"
+      "name": "cities",
+      "extent": [
+        -179.58997888396897,
+        -85.051,
+        179.38330358817018,
+        82.48332318035943
+      ],
+      "layer": null,
+      "advanced": {}
     },
     {
       "geometry": "linestring",
@@ -258,39 +276,17 @@
       "layer": null
     },
     {
-      "geometry": "polygon",
-      "extent": [
-        -179.99999999990007,
-        -55.91477792755927,
-        180,
-        83.63432689077344
-      ],
-      "id": "states",
-      "class": "",
-      "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-shp.zip",
-        "id": "states",
-        "project": "worldmap2",
-        "srs": ""
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "states",
-      "status": "off"
-    },
-    {
       "geometry": "point",
       "extent": [
         -179.58997888396897,
-        -81.17908472282718,
-        179.38330358817024,
+        -85.051,
+        179.38330358817018,
         82.48332318035943
       ],
       "id": "cities_labels",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-populated-places-simple.zip",
+        "file": "data/ne_10m_populated_places_simple.shp",
         "id": "cities_labels",
         "project": "worldmap",
         "srs": ""
@@ -298,7 +294,8 @@
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "cities_labels"
+      "name": "cities_labels",
+      "layer": null
     },
     {
       "geometry": "point",
