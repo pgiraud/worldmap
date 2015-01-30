@@ -15,39 +15,11 @@ Map {
 
 #cities {
   //[zoom=6] {
-    [FEATURECLA="Admin-0 capital"] {
+    [featurecla="Admin-0 capital"] {
       point-file: url(symbols/star3.svg);
       point-transform: "scale(0.03)";
       point-allow-overlap: true;
     }
-  
-    /*
-  [FEATURECLA!="Admin-0 capital"] {
-    [SCALERANK<3],
-    [SCALERANK=3],
-    [SCALERANK=4] {
-      marker-width:4;
-      marker-fill:#999;
-      marker-line-color:#555;
-      marker-allow-overlap: true;
-      marker-width: 10;
-    }
-    [SCALERANK=6] {
-      marker-width:3;
-      marker-fill:#999;
-      marker-line-color:#555;
-      marker-allow-overlap: true;
-    }
-    */
-    /*
-    [SCALERANK=7] {
-      marker-width:2;
-      marker-fill:#999;
-      marker-line-color:#555;
-      marker-allow-overlap: true;
-    }
-    
-  }*/
 }
 
 #10murbanareas {

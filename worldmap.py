@@ -26,6 +26,7 @@ X_GUTTER = 1.00
 # font size, line width resize factor
 RESIZE_FACTOR = 9 / RATIO
 
+srs = "+proj=natearth +wkttext"
 
 def increase(s, attr):
 
@@ -67,89 +68,24 @@ for s in xmldoc.getElementsByTagName('Parameter'):
         if 'shp' in cdata.data:
             cdata.data = '/tmp/' + os.path.basename(cdata.data)
 
+for s in xmldoc.getElementsByTagName('Map'):
+    s.setAttribute('srs', srs)
+
+for s in xmldoc.getElementsByTagName('Layer'):
+    s.setAttribute('srs', srs)
+
+raster = xmldoc.getElementsByTagName('Layer')[0]
+raster_url = raster.getElementsByTagName('Parameter')[0].firstChild
+raster_url.data = raster_url.data.replace('data/map_mercator_light.tif', 'layers/map_natearth_compressed_small.tif')
+
 f = file("worldmap_resized.xml", "w+b")
 print "Writing resized mapfile"
 xmldoc.writexml(f)
 f.close()
 os.remove(worldmap_path)
 
-import mapnik
-
-map = mapnik.Map(int(math.ceil(TILE_SIZE * X_GUTTER)),
-                 RASTER_SIZE[1])
-print "Map size : %s x %s" % (map.width, map.height)
-
-stylesheet = 'worldmap_resized.xml'
-print "Loading map"
-mapnik.load_map(map, stylesheet)
-
-srs = "+proj=natearth +wkttext"
-map.srs = srs
-
-ds = mapnik.Gdal(file="layers/map_natearth_compressed_small.tif")
-geotiff = map.layers[0]
-geotiff.datasource = ds
-geotiff.srs = srs
-
-for i in map.layers:
-    i.srs = srs
-
-print "Setting projection"
-projection = mapnik.Projection(srs)
-
-RASTER_GEO_SIZE = RASTER_BOUNDS[2] - RASTER_BOUNDS[0]
-TILE_GEO_SIZE = RASTER_GEO_SIZE / COLS
-
-# offset in pixel from the left border of the worldmap image
-offset = 0
-for i in range(0, COLS):
-    start = datetime.datetime.now()
-
-    x_min = RASTER_BOUNDS[0] + i * TILE_GEO_SIZE
-    x_max = x_min + TILE_GEO_SIZE
-    margin = TILE_GEO_SIZE * (1 - X_GUTTER)
-
-    bounds = mapnik.Box2d(x_min - margin, RASTER_BOUNDS[1],
-                          x_max + margin, RASTER_BOUNDS[3])
-    print "Map bounds : %s" % bounds
-
-    map.extent = bounds
-    map.zoom_to_box(bounds)
-
-    image = 'export/worldmap_%02d' % i
-    print "Rendering image %s" % image
-    mapnik.render_to_file(map, image + '.tif')
-    end = datetime.datetime.now()
-    duration = end - start
-    print "rendered image to '%s' in %s seconds" % (image, duration.seconds)
-
-    im = Image.open(image + '.png')
-    xmin = int(TILE_SIZE * (X_GUTTER - 1) / 2)
-    if i == COLS - 1:
-        xmax = TILE_SIZE
-    else:
-        xmax = int(TILE_SIZE + TILE_SIZE * (X_GUTTER - 1) / 2)
-    box = (xmin,
-           0,
-           xmax,
-           int(RASTER_SIZE[1]))
-
-    print "Cropping "
-    # cropped = im.crop(box)
-    # cropped.save(image + '.tif')
-    # os.remove(image + '.png');
-
-    # Create the new tfw file for writing
-    # This world file takes pixels coordinates into account
-    config = io.open(image + '.tfw', 'w')
-
-    # Read the lines from the template, substitute the values
-    for line in io.open('template.tfw', 'r'):
-        line = line.replace('X_ORIG', str(i * TILE_SIZE))
-        config.write(line)
-
-    # Close the files
-    config.close()
+print "Generating image"
+subprocess.call("node export.js", shell=True)
 
 print "Done ! Now you can launch the following command: 'cd export && gdal_merge.py -o worldmap.tif -co COMPRESS=DEFLATE -co TILED=YES worldmap_*.tif'."
 print "It may take a while."

@@ -1,13 +1,7 @@
-@futura_med: "Futura Medium","Function Pro Medium","Ubuntu Regular","Trebuchet MS Regular","DejaVu Sans Book";
-@futura_italic: "Futura Medium Italic","Function Pro Medium Italic","Ubuntu Italic","Trebuchet MS Italic","DejaVu Sans Oblique";
-@futura_bold: "Futura Bold","Function Pro Bold","Ubuntu Bold","Trebuchet MS Bold","DejaVu Sans Bold";
+@futura_med: "Futura Medium","Trebuchet MS Regular";
+@futura_italic: "Futura Medium Italic","Trebuchet MS Italic";
+@futura_bold: "Futura Bold","Trebuchet MS Bold";
 
-@sans_bold:"Droid Sans Bold","Arial Bold","DejaVu Sans Bold";
-@sans_bold_italic:  "Open Sans Bold Italic","DejaVu Sans Bold Italic","unifont Medium";
-@sans_italic:  "Open Sans Italic","DejaVu Sans Italic","unifont Medium";
-
-@dejavu: "DejaVu Sans Book";
-@georgia: "Georgia Regular", "Georgia Normal";
 
 /* ---- Countries ---- */
 #countries_label {
@@ -24,7 +18,7 @@
   //marker-width: 6;
   //marker-fill: red;
   //marker-allow-overlap: true;
-    text-face-name: @dejavu;
+    text-face-name: @futura_med;
     text-fill: #333;
     text-size:18;
     text-halo-fill: white;
@@ -64,7 +58,6 @@
       text-dy: 4;
       }
     [PLACEMENT=''] {
-      text-face-name: @dejavu;
       text-placement-type: simple;
       text-horizontal-alignment: middle;
       text-vertical-alignment: middle;
@@ -93,8 +86,8 @@
 }
 
 #cities_labels {
-    [FEATURECLA="Admin-0 capital"] {
-    text-name:'[NAMEASCII]';
+    [featurecla="Admin-0 capital"] {
+    text-name:'[nameascii]';
     text-face-name:@futura_med;
     text-fill: #535353;
     text-fill: rgba(50, 50, 50, 1);
@@ -142,10 +135,10 @@
   text-halo-fill: rgba(0, 130, 255, 0.3);
   text-halo-radius:1.5;
   text-line-spacing:1;
-  text-wrap-width:20;
+  text-wrap-width:80;
   text-name: "[name_fr]";
   text-placement: line;
-  text-size:20;
+  text-size:18;
   text-clip: false;
 }
 #waterbodiesptlabels {
@@ -162,14 +155,14 @@
     text-size: 40;
   }
   [scale_rank=1] {
-    text-size: 20;
+    text-size: 18;
   }
   text-clip: false;
 }
 
 #geographiclineslabel {
     text-size: 20;
-  text-face-name: @sans_bold;
+  text-face-name: @futura_med;
   text-fill: @orange;
   text-halo-fill:rgba(255,255,255,0.5);
   text-halo-radius:1;
@@ -178,7 +171,7 @@
 }
 
 #rivers_label {
-  text-face-name: @sans_bold;
+  text-face-name: @futura_med;
   text-fill: #70b1ef;
   text-halo-fill: rgba(255,255,255,0.5);
   text-halo-radius:1;
