@@ -3,7 +3,7 @@ var fs = require('fs');
 
 // register fonts and datasource plugins
 mapnik.register_default_fonts();
-mapnik.register_fonts('/Library/Fonts');
+mapnik.register_system_fonts();
 mapnik.register_default_input_plugins();
 
 var width = 25295;

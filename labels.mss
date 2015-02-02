@@ -2,6 +2,12 @@
 @futura_italic: "Futura Medium Italic","Trebuchet MS Italic";
 @futura_bold: "Futura Bold","Trebuchet MS Bold";
 
+@droid_serif: "Droid Serif Regular";
+@droid_serif_bold: "Droid Serif Bold";
+@droid_serif_italic: "Droid Serif Italic";
+@yanone_bold: "Yanone Kaffeesatz Bold";
+@yanone: "Yanone Kaffeesatz Regular";
+
 
 /* ---- Countries ---- */
 #countries_label {
@@ -18,9 +24,9 @@
   //marker-width: 6;
   //marker-fill: red;
   //marker-allow-overlap: true;
-    text-face-name: @futura_med;
+    text-face-name: @droid_serif_bold;
     text-fill: #333;
-    text-size:16;
+    text-size:18;
     text-halo-fill: white;
     text-halo-radius: 2;
     text-line-spacing:1;
@@ -57,7 +63,7 @@
       text-dy: 4;
       }
     [PLACEMENT=''] {
-      text-size: 18;
+      text-size: 20;
       text-wrap-width:180;
       text-placement-type: simple;
       text-horizontal-alignment: middle;
@@ -68,28 +74,10 @@
 }
 
 
-#states {
-  [NAME_0='United States of America'] {
-  text-face-name: @futura_med;
-  text-fill: #777;
-  text-size:16;
-  text-halo-fill: @countries;
-  text-halo-radius:1;
-  text-line-spacing:1;
-  text-wrap-width:30;
-  text-name: "[NAME_1]";
-  text-placements:"N,S,W,E,NE,SW,13,11";
-  text-placement-type:simple;
-    text-dx: 4;
-    text-dy: 4;
-  text-clip: false;
-    }
-}
-
 #cities_labels {
     [featurecla="Admin-0 capital"] {
     text-name:'[nameascii]';
-    text-face-name:@futura_med;
+    text-face-name:@droid_serif;
     text-fill: #535353;
     text-fill: rgba(50, 50, 50, 1);
     text-halo-fill:rgba(255,255,255,0.7);
@@ -110,7 +98,7 @@
 #peaks {
   [name!=''][scalerank<=7] {
     text-name:"[name] + '\n' + [elevation] + ' m'";
-    text-face-name:@futura_italic;
+    text-face-name:@droid_serif_italic;
     text-size: 11;
     text-fill: rgba(50, 50, 50, 1);
     text-halo-fill:rgba(220,255,192,0.7);
@@ -131,7 +119,7 @@
 }
 
 #waterbodieslnlabels {
-  text-face-name: @futura_med;
+  text-face-name: @droid_serif_italic;
   text-fill: rgba(255, 255, 255, 0.7);
   text-halo-fill: rgba(0, 130, 255, 0.3);
   text-halo-radius:1.5;
@@ -143,7 +131,7 @@
   text-clip: false;
 }
 #waterbodiesptlabels {
-  text-face-name: @futura_italic;
+  text-face-name: @droid_serif_italic;
   text-fill: rgba(255, 255, 255, 0.7);
   text-halo-fill: rgba(0, 130, 255, 0.5);
   text-halo-radius:1;
@@ -163,7 +151,7 @@
 
 #geographiclineslabel {
     text-size: 20;
-  text-face-name: @futura_med;
+  text-face-name: @droid_serif_italic;
   text-fill: @orange;
   text-halo-fill:rgba(255,255,255,0.5);
   text-halo-radius:1;
@@ -172,7 +160,7 @@
 }
 
 #rivers_label {
-  text-face-name: @futura_med;
+  text-face-name: @droid_serif_italic;
   text-fill: #70b1ef;
   text-halo-fill: rgba(255,255,255,0.5);
   text-halo-radius:1;
