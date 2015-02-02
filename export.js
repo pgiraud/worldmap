@@ -19,9 +19,9 @@ map.load('worldmap_resized.xml', function(err,map) {
       if (err) throw err;
       im.encode('png', function(err,buffer) {
           if (err) throw err;
-          fs.writeFile('map.png',buffer, function(err) {
+          fs.writeFile('map.tif',buffer, function(err) {
               if (err) throw err;
-              console.log('saved map image to map.png');
+              console.log('saved map image to map.tif');
           });
       });
     });
