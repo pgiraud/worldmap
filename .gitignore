@@ -3,3 +3,5 @@ layers/*
 worldmap.xml
 worldmap_resized.xml
 export/*.*
+map.tif
+node_modules
