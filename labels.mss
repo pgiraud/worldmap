@@ -27,8 +27,9 @@
     text-face-name: @droid_serif;
     text-fill: #333;
     text-size:15;
-    text-halo-fill: white;
+    text-halo-fill: rgba(160, 160, 160, 0.6);
     text-halo-radius: 2;
+    text-halo-comp-op: plus;
     text-line-spacing:1;
     text-name: "[NAME]";
     text-placement-type:simple;
@@ -127,7 +128,7 @@
   text-wrap-width:80;
   text-name: "[name_fr]";
   text-placement: line;
-  text-size:18;
+  text-size:16;
   text-clip: false;
 }
 #waterbodiesptlabels {
@@ -144,7 +145,7 @@
     text-size: 40;
   }
   [scale_rank=1] {
-    text-size: 18;
+    text-size: 16;
   }
   text-clip: false;
 }

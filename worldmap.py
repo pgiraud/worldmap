@@ -24,7 +24,7 @@ TILE_SIZE = RASTER_SIZE[0] / COLS
 X_GUTTER = 1.00
 
 # font size, line width resize factor
-RESIZE_FACTOR = 9 / RATIO
+RESIZE_FACTOR = 10 / RATIO
 
 srs = "+proj=natearth +wkttext"
 
