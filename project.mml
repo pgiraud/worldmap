@@ -336,7 +336,8 @@
       "srs": "",
       "advanced": {},
       "name": "rivers_label",
-      "layer": null
+      "layer": null,
+      "status": "off"
     }
   ],
   "scale": 1,

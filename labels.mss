@@ -24,9 +24,9 @@
   //marker-width: 6;
   //marker-fill: red;
   //marker-allow-overlap: true;
-    text-face-name: @droid_serif_bold;
+    text-face-name: @droid_serif;
     text-fill: #333;
-    text-size:18;
+    text-size:15;
     text-halo-fill: white;
     text-halo-radius: 2;
     text-line-spacing:1;
@@ -63,7 +63,7 @@
       text-dy: 4;
       }
     [PLACEMENT=''] {
-      text-size: 20;
+      text-size: 18;
       text-wrap-width:180;
       text-placement-type: simple;
       text-horizontal-alignment: middle;
@@ -151,9 +151,10 @@
 
 #geographiclineslabel {
     text-size: 20;
+  text-dy: 5;
   text-face-name: @droid_serif_italic;
-  text-fill: @orange;
-  text-halo-fill:rgba(255,255,255,0.5);
+  text-fill: rgba(255,255,255, 1);
+  text-halo-fill: @orange;
   text-halo-radius:1;
   //text-wrap-width:140;
   text-name: "[NAME_FR]";
