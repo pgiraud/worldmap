@@ -21,9 +21,6 @@
   [ID!=215] 
   [ID!=217]
   [ID!=230] {
-  //marker-width: 6;
-  //marker-fill: red;
-  //marker-allow-overlap: true;
     text-face-name: @droid_serif;
     text-fill: #333;
     text-size:15;
@@ -76,7 +73,7 @@
 
 
 #cities_labels {
-    [featurecla="Admin-0 capital"] {
+  [featurecla="Admin-0 capital"] {
     text-name:'[nameascii]';
     text-face-name:@droid_serif;
     text-fill: #535353;
@@ -88,10 +85,10 @@
     text-line-spacing:1;
     text-dx: 4;
     text-dy: 4;
-      text-fill: rgba(50, 50, 50, 1);
-      text-halo-fill: #ffffa1;
-      text-halo-radius: 1.6;
-      text-size: 13;
+    text-fill: rgba(50, 50, 50, 1);
+    text-halo-fill: #ffffa1;
+    text-halo-radius: 1.6;
+    text-size: 13;
     text-clip: false;
   }
 }
@@ -110,12 +107,12 @@
     text-dy: 7;
     [elevation>7000] {
       text-size: 12;
-      }
+    }
     [elevation=8848] {
       text-size: 14;
-    text-dx: 6;
-    text-dy: 6;
-      }
+      text-dx: 6;
+      text-dy: 6;
+    }
   }
 }
 
@@ -151,13 +148,12 @@
 }
 
 #geographiclineslabel {
-    text-size: 20;
+  text-size: 20;
   text-dy: 5;
   text-face-name: @droid_serif_italic;
   text-fill: rgba(255,255,255, 1);
   text-halo-fill: @orange;
   text-halo-radius:1;
-  //text-wrap-width:140;
   text-name: "[NAME_FR]";
 }
 
