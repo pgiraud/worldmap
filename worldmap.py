@@ -1,13 +1,8 @@
 #! /usr/bin/env python
 
 from xml.dom import minidom
-import datetime
-import math
 import os
-import io
 import subprocess
-
-from PIL import Image
 
 print "Transforming shapefile data"
 subprocess.call("sh transform_data.sh", shell=True)
@@ -16,17 +11,11 @@ print "Parsing mapfile"
 worldmap_path = '/Users/pierregiraud/Downloads/worldmap.xml'
 xmldoc = minidom.parse(worldmap_path)
 
-RATIO = 1 / 0.22
-RASTER_BOUNDS = (-17446643.326, -8880879.442, 17446466.468, 8880981.952)
-RASTER_SIZE = (int(114981 / RATIO), int(58529 / RATIO))
-COLS = 1
-TILE_SIZE = RASTER_SIZE[0] / COLS
-X_GUTTER = 1.00
-
 # font size, line width resize factor
-RESIZE_FACTOR = 10 / RATIO
+RESIZE_FACTOR = 2.22
 
 srs = "+proj=natearth +wkttext"
+
 
 def increase(s, attr):
 
