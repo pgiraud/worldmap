@@ -13,16 +13,20 @@ var map = new mapnik.Map(width, height);
 map.load('worldmap_resized.xml', function(err,map) {
     if (err) throw err;
     var im = new mapnik.Image(width, height);
-    map.zoomAll();
+    //map.zoomAll()
+    map.extent = [0, -9072201.519427164, 17822404.45844891, 0];
 
-    map.render(im, function(err,im) {
+    map.renderFile('map4.jpg', {format: 'jpeg'}, function(err) {
       if (err) throw err;
-      im.encode('png', function(err,buffer) {
-          if (err) throw err;
-          fs.writeFile('map.tif',buffer, function(err) {
-              if (err) throw err;
-              console.log('saved map image to map.tif');
-          });
-      });
     });
+    //map.render(im, function(err,im) {
+      //if (err) throw err;
+      //im.encode('tiff', function(err,buffer) {
+          //if (err) throw err;
+          //fs.writeFile('map.tif', buffer, function(err) {
+              //if (err) throw err;
+              //console.log('saved map image to map.tif');
+          //});
+      //});
+    //});
 });

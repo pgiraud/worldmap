@@ -62,7 +62,7 @@
       }
     [PLACEMENT=''] {
       text-size: 18;
-      text-wrap-width:180;
+      text-wrap-width:200;
       text-placement-type: simple;
       text-horizontal-alignment: middle;
       text-vertical-alignment: middle;
