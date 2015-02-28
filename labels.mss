@@ -62,7 +62,7 @@
       }
     [PLACEMENT=''] {
       text-size: 18;
-      text-wrap-width:180;
+      text-wrap-width:200;
       text-placement-type: simple;
       text-horizontal-alignment: middle;
       text-vertical-alignment: middle;
@@ -71,10 +71,11 @@
   }
 }
 
-
-#cities_labels {
-  [featurecla="Admin-0 capital"] {
-    text-name:'[nameascii]';
+#capitals {
+  ["name:fr"!=''] {
+    text-name:'[name:fr]';
+  }
+  text-name:'[name]';
     text-face-name:@droid_serif;
     text-fill: #535353;
     text-fill: rgba(50, 50, 50, 1);
@@ -90,7 +91,6 @@
     text-halo-radius: 1.6;
     text-size: 13;
     text-clip: false;
-  }
 }
 
 #peaks {

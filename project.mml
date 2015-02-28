@@ -278,24 +278,22 @@
     {
       "geometry": "point",
       "extent": [
-        -179.58997888396897,
-        -85.051,
-        179.38330358817018,
-        82.48332318035943
+        -175.2018085,
+        -41.2887639,
+        178.4421662,
+        64.175029
       ],
-      "id": "cities_labels",
+      "id": "capitals",
       "class": "",
       "Datasource": {
-        "file": "data/ne_10m_populated_places_simple.shp",
-        "id": "cities_labels",
-        "project": "worldmap",
-        "srs": ""
+        "file": "data/capitals.json",
+        "layer": "OGRGeoJSON"
       },
+      "layer": "OGRGeoJSON",
       "srs-name": "autodetect",
       "srs": "",
       "advanced": {},
-      "name": "cities_labels",
-      "layer": null
+      "name": "capitals"
     },
     {
       "geometry": "point",
@@ -336,8 +334,7 @@
       "srs": "",
       "advanced": {},
       "name": "rivers_label",
-      "layer": null,
-      "status": "off"
+      "layer": null
     }
   ],
   "scale": 1,
