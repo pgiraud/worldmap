@@ -61,7 +61,7 @@
       text-dy: 4;
       }
     [PLACEMENT=''] {
-      text-size: 18;
+      text-size: 17;
       text-wrap-width:200;
       text-placement-type: simple;
       text-horizontal-alignment: middle;
@@ -71,7 +71,7 @@
   }
 }
 
-#capitals {
+#capitals_labels {
   ["name:fr"!=''] {
     text-name:'[name:fr]';
   }
@@ -82,14 +82,14 @@
     text-halo-fill:rgba(255,255,255,0.7);
     text-halo-radius:1.3;
     text-placement-type:simple;
-    text-placements: "NE,NW,SE,SW";
+    text-placements: "NE,NW,SE,SW,E,W";
     text-line-spacing:1;
     text-dx: 4;
     text-dy: 4;
     text-fill: rgba(50, 50, 50, 1);
     text-halo-fill: #ffffa1;
     text-halo-radius: 1.6;
-    text-size: 13;
+    text-size: 12.5;
     text-clip: false;
 }
 
@@ -106,10 +106,10 @@
     text-dx: 7;
     text-dy: 7;
     [elevation>7000] {
-      text-size: 12;
+      text-size: 11.5;
     }
     [elevation=8848] {
-      text-size: 14;
+      text-size: 13;
       text-dx: 6;
       text-dy: 6;
     }
@@ -122,10 +122,10 @@
   text-halo-fill: rgba(0, 130, 255, 0.3);
   text-halo-radius:1.5;
   text-line-spacing:1;
-  text-wrap-width:80;
+  text-wrap-width:200;
   text-name: "[name_fr]";
   text-placement: line;
-  text-size:16;
+  text-size:15;
   text-clip: false;
 }
 #waterbodiesptlabels {
@@ -142,7 +142,7 @@
     text-size: 40;
   }
   [scale_rank=1] {
-    text-size: 16;
+    text-size: 15;
   }
   text-clip: false;
 }

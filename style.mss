@@ -13,12 +13,10 @@ Map {
   raster-scaling: bilinear;
 }
 
-#cities {
-  [featurecla="Admin-0 capital"] {
+#capitals {
     point-file: url(symbols/star3.svg);
     point-transform: "scale(0.03)";
     point-allow-overlap: true;
-  }
 }
 
 #10murbanareas {

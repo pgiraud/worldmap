@@ -4,15 +4,15 @@ from xml.dom import minidom
 import os
 import subprocess
 
-print "Transforming shapefile data"
-subprocess.call("sh transform_data.sh", shell=True)
+#print "Transforming shapefile data"
+#subprocess.call("sh transform_data.sh", shell=True)
 
 print "Parsing mapfile"
 worldmap_path = '/Users/pierregiraud/Downloads/worldmap.xml'
 xmldoc = minidom.parse(worldmap_path)
 
 # font size, line width resize factor
-RESIZE_FACTOR = 4.44
+RESIZE_FACTOR = 4
 
 srs = "+proj=natearth +wkttext"
 
@@ -51,17 +51,18 @@ for s in xmldoc.getElementsByTagName('TextSymbolizer'):
     for i in ['size', 'halo-radius', 'line-spacing', 'dx', 'dy']:
         increase(s, i)
 
-for s in xmldoc.getElementsByTagName('Parameter'):
-    if s.attributes.has_key('name') and s.attributes['name'].value == 'file':
-        cdata = s.firstChild
-        if 'shp' in cdata.data:
-            cdata.data = '/tmp/' + os.path.basename(cdata.data)
+#for s in xmldoc.getElementsByTagName('Parameter'):
+    #if s.attributes.has_key('name') and s.attributes['name'].value == 'file':
+        #cdata = s.firstChild
+        #if 'shp' in cdata.data:
+            #cdata.data = '/tmp/' + os.path.basename(cdata.data)
 
 for s in xmldoc.getElementsByTagName('Map'):
     s.setAttribute('srs', srs)
 
 for s in xmldoc.getElementsByTagName('Layer'):
-    s.setAttribute('srs', srs)
+    if s.attributes.has_key('name') and s.attributes['name'].value == 'raster':
+        s.setAttribute('srs', srs)
 
 raster = xmldoc.getElementsByTagName('Layer')[0]
 raster_url = raster.getElementsByTagName('Parameter')[0].firstChild

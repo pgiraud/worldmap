@@ -12,7 +12,7 @@
   ],
   "format": "png",
   "interactivity": {
-    "layer": "cities",
+    "layer": "",
     "fields": []
   },
   "minzoom": 0,
@@ -111,14 +111,14 @@
       "Datasource": {
         "file": "data/ne_10m_admin_0_boundary_lines_land.shp"
       },
-      "srs-name": "autodetect",
-      "srs": "",
+      "srs-name": "custom",
+      "srs": "+proj=natearth +wkttext",
       "name": "10madmin0boundarylin",
       "extent": [
-        -141.00554863899987,
-        -55.120923766999944,
-        140.97762699400005,
-        70.07531036400012
+        -172.66887242072838,
+        -55.12092376699995,
+        -135.82060206056312,
+        70.07531036400013
       ],
       "layer": null,
       "advanced": {}
@@ -139,25 +139,23 @@
     },
     {
       "geometry": "point",
-      "id": "cities",
+      "extent": [
+        -175.2018085,
+        -41.2887639,
+        178.4421662,
+        64.175029
+      ],
+      "id": "capitals",
       "class": "",
       "Datasource": {
-        "file": "data/ne_10m_populated_places_simple.shp",
-        "id": "cities",
-        "project": "worldmap",
-        "srs": ""
+        "file": "data/capitals.json",
+        "layer": "OGRGeoJSON"
       },
-      "srs-name": "autodetect",
-      "srs": "",
-      "name": "cities",
-      "extent": [
-        -179.58997888396897,
-        -85.051,
-        179.38330358817018,
-        82.48332318035943
-      ],
-      "layer": null,
-      "advanced": {}
+      "layer": "OGRGeoJSON",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "capitals"
     },
     {
       "geometry": "linestring",
@@ -283,17 +281,17 @@
         178.4421662,
         64.175029
       ],
-      "id": "capitals",
+      "id": "capitals_labels",
       "class": "",
       "Datasource": {
         "file": "data/capitals.json",
         "layer": "OGRGeoJSON"
       },
       "layer": "OGRGeoJSON",
-      "srs-name": "autodetect",
-      "srs": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
       "advanced": {},
-      "name": "capitals"
+      "name": "capitals_labels"
     },
     {
       "geometry": "point",
@@ -315,25 +313,6 @@
         69.28107036816243
       ],
       "advanced": {},
-      "layer": null
-    },
-    {
-      "geometry": "linestring",
-      "extent": [
-        -165.24,
-        -50.24,
-        176.33,
-        73.33
-      ],
-      "id": "rivers_label",
-      "class": "",
-      "Datasource": {
-        "file": "data/rivers.shp"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "advanced": {},
-      "name": "rivers_label",
       "layer": null
     }
   ],
