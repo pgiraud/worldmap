@@ -109,16 +109,16 @@
       "id": "10madmin0boundarylin",
       "class": "",
       "Datasource": {
-        "file": "data/ne_10m_admin_0_boundary_lines_land.shp"
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-boundary-lines-land.zip"
       },
-      "srs-name": "custom",
-      "srs": "+proj=natearth +wkttext",
+      "srs-name": "autodetect",
+      "srs": "",
       "name": "10madmin0boundarylin",
       "extent": [
-        -172.66887242072838,
-        -55.12092376699995,
-        -135.82060206056312,
-        70.07531036400013
+        -141.00554866607175,
+        -55.12092376716174,
+        140.977626994236,
+        70.0753103641985
       ],
       "layer": null,
       "advanced": {}
@@ -148,7 +148,7 @@
       "id": "capitals",
       "class": "",
       "Datasource": {
-        "file": "data/capitals.json",
+        "file": "data/capitals.shp",
         "layer": "OGRGeoJSON"
       },
       "layer": "OGRGeoJSON",
@@ -284,7 +284,7 @@
       "id": "capitals_labels",
       "class": "",
       "Datasource": {
-        "file": "data/capitals.json",
+        "file": "data/capitals.shp",
         "layer": "OGRGeoJSON"
       },
       "layer": "OGRGeoJSON",
@@ -314,6 +314,50 @@
       ],
       "advanced": {},
       "layer": null
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -139.0471919422785,
+        -49.250740248410615,
+        178.44862226797608,
+        81.13822602001464
+      ],
+      "id": "10madmin1statesprovi",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-lines.zip",
+        "id": "10madmin1statesprovi",
+        "project": "worldmap",
+        "srs": ""
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "10madmin1statesprovi"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -179.99999999990007,
+        -55.91477792755928,
+        180,
+        83.63432689077344
+      ],
+      "id": "10madmin1statesprovi2",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-1-states-provinces-shp.zip",
+        "id": "10madmin1statesprovi2",
+        "project": "worldmap",
+        "srs": ""
+      },
+      "layer": null,
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "10madmin1statesprovi2"
     }
   ],
   "scale": 1,

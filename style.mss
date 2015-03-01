@@ -88,3 +88,11 @@ Map {
   line-width: 0.6;
   line-color: #555;
 }
+
+#10madmin1statesprovi {
+  [COUNTRYNAM='United States of America'] {
+    line-width:1.5;
+    line-dasharray: 3,3;
+    line-color: grey;
+  }
+}

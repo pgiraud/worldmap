@@ -24,7 +24,6 @@
     text-face-name: @droid_serif;
     text-fill: #333;
     text-size:15;
-    text-halo-fill: rgba(160, 160, 160, 0.6);
     text-halo-radius: 2;
     text-halo-comp-op: plus;
     text-line-spacing:1;
@@ -71,9 +70,29 @@
   }
 }
 
+#10madmin1statesprovi2 {
+  [NAME_0='United States of America'] {
+    text-face-name: @droid_serif;
+    text-fill: #666;
+    text-halo-comp-op: plus;
+    text-halo-radius: 1.5;
+    text-size:11.5;
+    text-halo-fill: @countries;
+    text-halo-radius:1;
+    text-line-spacing:1;
+    text-wrap-width:30;
+    text-name: "[NAME_1]";
+    text-placements:"N,S,W,E,NE,SW";
+    text-placement-type:simple;
+    text-dx: 4;
+    text-dy: 4;
+    text-clip: false;
+  }
+}
+
 #capitals_labels {
-  ["name:fr"!=''] {
-    text-name:'[name:fr]';
+  ["name_fr"!=''] {
+    text-name:'[name_fr]';
   }
   text-name:'[name]';
     text-face-name:@droid_serif;
