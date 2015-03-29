@@ -149,12 +149,18 @@
       "class": "",
       "Datasource": {
         "file": "data/capitals.shp",
-        "layer": "OGRGeoJSON"
+        "layer": "OGRGeoJSON",
+        "id": "capitals",
+        "project": "worldmap",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+        "encoding": "utf8"
       },
       "layer": "OGRGeoJSON",
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
+      "advanced": {
+        "encoding": "utf8"
+      },
       "name": "capitals"
     },
     {
@@ -285,12 +291,15 @@
       "class": "",
       "Datasource": {
         "file": "data/capitals.shp",
-        "layer": "OGRGeoJSON"
+        "layer": "OGRGeoJSON",
+        "encoding": "latin1"
       },
       "layer": "OGRGeoJSON",
       "srs-name": "WGS84",
       "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "advanced": {},
+      "advanced": {
+        "encoding": "latin1"
+      },
       "name": "capitals_labels"
     },
     {

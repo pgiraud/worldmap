@@ -14,7 +14,7 @@ worldmap_path = '/Users/pierregiraud/Downloads/worldmap.xml'
 xmldoc = minidom.parse(worldmap_path)
 
 # font size, line width resize factor
-RESIZE_FACTOR = 4
+RESIZE_FACTOR = 2.1
 
 srs = "+proj=natearth +wkttext"
 
