@@ -78,8 +78,12 @@ os.remove(worldmap_path)
 print "Generating image"
 subprocess.call("node export.js", shell=True)
 
-print "Done ! Now you can launch the following command: 'cd export && gdal_merge.py -o worldmap.tif -co COMPRESS=DEFLATE -co TILED=YES worldmap_*.tif'."
 print "It may take a while."
-print "Then convert it to PDF : 'gdal_translate worldmap.tif worldmap.pdf'."
-print "To split the file into small pieces to be printed on A4 sheets, use the folllowing:"
-print "gdal_retile.py -ps 2480 3508 worldmap.tif -targetDir tmp"
+#print "To split the file into small pieces to be printed on A4 sheets, use the folllowing:"
+#print "gdal_retile.py -ps 2480 3508 worldmap.tif -targetDir tmp"
+
+print "To add the appropriate mentions"
+print "composite -gravity southeast -geometry +5000+50 mentions.png map0.png map_mentions.png"
+
+print "Then convert it to PDF"
+print "convert -density 300 -colorspace CMYK map_mentions.png map_cmyk.pdf"
