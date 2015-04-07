@@ -95,19 +95,18 @@
     text-name:'[name_fr]';
   }
   text-name:'[name]';
-    text-face-name:@droid_serif;
-    text-fill: #535353;
-    text-fill: rgba(50, 50, 50, 1);
-    text-halo-fill:rgba(255,255,255,0.7);
-    text-halo-radius:1.3;
+    text-face-name:@droid_serif_bold;
+//    text-fill: #535353;
+    text-fill: rgba(255, 255, 255, 1);
+//    text-fill: rgba(50, 50, 50, 1);
+    text-halo-fill:rgba(80, 80, 80, 0.6);
+//    text-halo-fill:rgba(255,255,255,0.7);
+    text-halo-radius:1.4;
     text-placement-type:simple;
     text-placements: "NE,NW,SE,SW,E,W";
     text-line-spacing:1;
     text-dx: 4;
     text-dy: 4;
-    text-fill: rgba(50, 50, 50, 1);
-    text-halo-fill: #ffffa1;
-    text-halo-radius: 1.6;
     text-size: 12.5;
     text-clip: false;
 }
